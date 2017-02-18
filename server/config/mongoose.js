@@ -1,1 +1,5 @@
-console.log('loading mongoose connection and model');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/{{template}}');
+
+require('../models/{{template}}');
