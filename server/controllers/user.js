@@ -4,7 +4,9 @@ var User = mongoose.model('User')
 module.exports = {
   login: function(req,res){
     var user = req.body;
+    console.log(user);
     User.findOne({name: user.name}, function(err, loggedIn){
+      console.log(loggedIn);
       if(loggedIn){
         res.json(loggedIn);
       }else{
@@ -14,7 +16,7 @@ module.exports = {
           if(err){
             res.json({err:'err'});
           }else{
-            User.findOne({first_name: user.first_name, last_name: user.last_name}, function(err, loggedIn){
+            User.findOne({name: user.name}, function(err, loggedIn){
               res.json(loggedIn);
             })
           }
