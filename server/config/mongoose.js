@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/{{template}}');
+mongoose.connect('mongodb://localhost/blackBeltReview');
 
-require('../models/{{template}}');
+require('../models/user');

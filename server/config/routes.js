@@ -1,6 +1,6 @@
-var {{template}}Controller = require('../controllers/{{template}}');
+var UserController = require('../controllers/user');
 module.exports = function(app){
-  app.get('/{{template}}', function(req,res){
-    {{template}}Controller.showAll(req,res);
+  app.post('/login', function(req,res){
+    UserController.login(req,res);
   });
 }
