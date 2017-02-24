@@ -1,4 +1,4 @@
-app.controller('LoginController', function (UserFactory, $scope){
+app.controller('HomeController', function (UserFactory, $scope){
   $scope.user = {};
   function gotLoggedIn(loggedIn){
     $scope.loggedIn = loggedIn;
@@ -6,9 +6,6 @@ app.controller('LoginController', function (UserFactory, $scope){
 
   UserFactory.getLoggedIn(gotLoggedIn)
 
-  $scope.login = function(){
-    UserFactory.login($scope.user, gotLoggedIn)
-  }
   $scope.logOut = function(){
     UserFactory.logOut();
     $scope.loggedIn = {};
